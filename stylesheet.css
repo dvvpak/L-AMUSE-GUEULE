@@ -1,0 +1,724 @@
+/* EVERYTHING */
+*,
+*::before,
+*::after{
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	list-style:none;
+	box-sizing: border-box;
+}
+
+
+:root{
+	- -main-font:  ; "Avenir",Impact, Amble, Arial, Verdana,sans-serif;
+	- -secondary-font: ;
+	- -main-font
+}
+
+
+
+
+
+/* Définition des polices personnalisées*/
+@font-face{
+	font-family: Roboto;
+	src:  url(fonts/RobotoCondensed-Light.ttf);
+}
+@font-face{
+	font-family: Great;
+	src:  url(fonts/GreatVibes-Regular.otf);
+}
+@font-face{
+	font-family: Herr;
+	src:  url(fonts/herr-von-muellerhoff-v15-latin-regular.ttf);
+}
+
+/* Eléments principaux de la page*/
+
+html{
+	font-size:  1em;
+	font-family: Avenir,Impact,Arial, Verdana;
+	scroll-behavior: smooth;
+}
+
+body{
+	overflow-x: hidden;
+}
+
+
+section{
+	padding:  3.9em 0;
+	overflow: hidden;
+}
+
+/*img{
+	width: 100%;
+	max-width: 100%;
+}*/
+
+h1{
+	color: goldenrod;
+	font-size: 3em;
+	font-family: Herr,Great,"Avenir",Impact,Arial, Verdana, sans-serif;
+	padding-bottom: 0;
+	margin-bottom: -50px;
+	line-height: normal;
+	opacity: 0;
+	animation: fadeUp .5s forwards;
+	animation-delay: .5s;
+}
+
+h3{
+	color: black;
+	font-size: 3em;
+	font-family: Herr,Great,"Avenir",Impact,Arial, Verdana, sans-serif;
+	margin-top: 0px;
+	padding-bottom: 0;
+}
+
+h4{
+	color: white;
+	font-size: 0.6em;
+	font-family: "Avenir",Impact,Arial, Verdana, sans-serif;
+	margin-top: 0px;
+	letter-spacing: 5px;
+}
+
+a{
+	text-decoration: none;
+}
+
+p{
+	font-size:  1.2rem;
+}
+
+.container{
+ 	width: 100%;
+ 	max-width: 122.5rem;
+ 	margin: 0 auto;
+ 	padding: 0 2.4rem;
+ }
+
+
+ 			/* HEADER */
+.header{
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	/*background-image: linear-gradient( to bottom,rgba(0, 0, 0, 0.5), transparent);*/
+	background-color: transparent;	
+}
+
+nav{
+	width: 100%;
+	height: 7.2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.menu-toggle{
+	font-size: 1rem;
+	position: absolute;
+	top: 6%;
+	transform: translateY(-50%);
+	right:  1.7rem;
+	cursor: pointer;
+	z-index: 1500;
+}
+
+.menu-toggle .fa-times{
+	display: none;
+}
+
+.nav-list{
+	list-style: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 80%;
+	height: 100vh;
+	background-color: black;
+	padding: 4.4rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	z-index: 1250;
+	transform: translateX(-100%);
+	transition: transform .5s;
+}
+
+.nav::before {
+	content: '';
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, .5);
+	z-index: 1000;
+	opacity: 0;
+	transform: scale(0);
+	transition: opacity .5s;
+}
+
+
+.open .fa-times{
+	display: block;
+}
+.open .fa-bars{
+	display: none;
+}
+
+.open .nav-list{
+	transform: translateX(0);
+}
+
+.open nav ::before{
+	opacity: 1;
+	transform: scale(1);
+}
+
+.nav-item{
+	border-bottom: 2px solid gray;
+	align-items: center;
+}
+
+.nav-link{
+	text-decoration: none;
+	display: block;
+	color: white;
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-right: 2px;
+	transition: color.2s;
+
+}
+
+.nav-link:hover{
+	color: goldenrod;
+    letter-spacing: 7px;
+}
+
+/* HERO */
+
+.hero{
+	top: 0;
+	width: 100%;
+	height: 100vh;
+	background: url("Food/Fromage3.png") center no-repeat;
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	text-align:center;
+}
+
+.hero h1{
+	font-size: 3.7rem;
+	color: gold;
+	font-weight: 80;
+	opacity: 0;
+	animation: fadeUp .5s forwards;
+}
+
+.headline{
+	font-size: 2.7rem;
+	color: white;
+	font-weight: bolder;
+	letter-spacing: -4px;
+	margin-top: -55px;
+	opacity: 0;
+	animation: scale .5s forwards;
+}
+
+.sub.headline{
+
+	color: goldenrod;
+	font-size: 3em;
+	font-family: Herr,Great,"Avenir",Impact,Arial, Verdana, sans-serif;
+	padding-bottom: 0;
+	margin-bottom: -50px;
+	line-height: .4;
+	opacity: 0;
+	animation: fadeUp .5s forwards;
+}
+
+.btn{
+	display: inline-block;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin-right: -2px;
+}
+
+.cta-btn{
+	font-size: 1rem;
+	background-color: whitesmoke;
+	padding: .7rem 1.2rem;
+	color: goldenrod;
+	border-radius: .4rem;
+	transition: background-color .2s;
+}
+
+.cta-btn:hover, .cta-btn:focus{
+	color: #fff;
+	background-color: gold;
+}
+
+/* INTRODUCTION */
+
+.global-headline{
+	text-align: center;
+	margin-top: 3.9em;
+}
+
+.introduction .global-headline{
+	margin-top: 5rem;
+}
+
+.introduction .headline-dark{
+	padding-top: 10px;
+}
+
+.global-headline .asterisk{
+	color: black;
+	margin: 1.4em 0 ;
+}
+
+.headline-dark{
+	color: black;
+	font-size: 2rem;
+	font-weight: bolder;
+	letter-spacing: 0.4px;
+	margin-right: -.7rem;
+	margin-top: -20px;
+}
+
+.global-headline .sub-headline{
+	letter-spacing: -1px;
+	line-height: -2px;
+}
+
+.hero .asterisk{
+	padding-bottom: 35px ;
+	color: whitesmoke;
+	font-size: .7rem;
+	opacity: 0;
+	animation: spin .5s forwards;
+	animation-delay: .7s;
+}
+
+.asterisk{
+	opacity: 0;
+	animation: spin .5s forwards;
+	animation-delay: .7s;
+}
+
+.single-animation{
+	opacity: 0;
+	animation: fadeDown .9s forwards;
+	animation-delay: 1.5s;
+}
+
+.first-letter{
+	text-transform: uppercase;
+	font-size: 7.5rem ;
+	line-height: -3rem;
+}
+
+.restaurant-info{
+	text-align: center ;
+	justify-content: center;
+
+}
+
+.restaurant-description{
+	margin-bottom: 3rem;
+}
+
+
+.restaurant-description p{
+	line-height:  1.6;
+	margin-bottom: 2.4rem ;
+	text-align: center;
+	align-content: center;
+	justify-content: center;
+	}
+
+.introduction img{
+	align-items: center;
+}	
+.introduction .container{
+	padding-bottom: 60px;}
+
+.body-btn{
+	font-size: 1rem;
+	color: goldenrod;
+	position: relative;
+	transition: color .5s;
+	background-color: white;
+	padding: .4rem .8rem;
+	border-radius: .4rem;
+	margin-bottom: 1.5rem;
+}
+
+.body-btn:hover, .body-btn:focus{
+	color: #fff;
+	background-color: goldenrod;
+}
+
+
+/* PLATS DELICIEUX */
+
+.delicieux{
+	background: url('Food/pates.jpg') center no-repeat;
+	background-size: cover;
+}
+
+.between{
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+}
+.delicieux .headline{
+	letter-spacing: -1.2px;
+	font-weight: bolder;
+}
+.delicieux .global-headline{
+	padding-bottom: 100px;
+}
+
+
+/* CUISINE */
+
+.image-group{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr) ;
+	grid-gap: .2rem;
+	align-content: center;
+	justify-content: center;
+	padding-left: 0 ;
+	padding-top: 100px;
+	left: -50;
+}
+
+.cuisine .restaurant-description{
+	padding-top: 3rem;
+	margin-bottom: 0;
+}
+
+
+
+/* Cozy & Authentique */
+.cozy{
+	background: url('Images/interieur.png') center no-repeat;
+	background-size: cover;
+}
+
+.between{
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+}
+
+.cozy h1{
+	font-size: 3.7rem;
+	color:  #c6243c;
+	font-weight: bolder;
+}
+
+.cozy .headline-dark{
+	letter-spacing: -1.2px;
+	font-weight: bolder;
+}
+
+.cozy .global-headline{
+	padding-bottom: 90px;
+}
+
+
+/* HAPPY HOURS */
+
+/* -><- */
+
+
+/* FOOTER */
+footer{
+	padding: 3rem 0;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	position: relative;
+}
+
+footer a{
+	color: #fff;
+}
+
+footer h5{
+	color: goldenrod;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	margin-bottom:1rem ;
+}
+
+footer .container{
+	display: block;
+}
+
+footer .asterisk{
+	padding-bottom: 35px ;
+	color: goldenrod;
+}
+
+.footer-contact{
+	margin-bottom: 6px;
+}
+.footer-horaires{
+	margin-bottom: 6px;
+}
+
+.back-to-top{
+	width: 3.2rem;
+	height: 3.2rem;
+	background-color: black;
+	color: #fff;
+	position: absolute;
+	top: -1.3rem;
+	left: 48%;
+	transform: translateX(-50);
+	border-radius: 50%;
+	align-items: center;
+	align-content: center;
+}
+
+.back-to-top i{
+	display: block;
+	color: #fff;
+	font-size: 16px;
+	padding: 1rem;
+	animation: up 2s infinite;
+}
+
+.footer-content{
+	overflow: hidden;
+}
+
+.contact{
+	display: flex;
+	justify-content: center;
+}
+
+.contact a{
+	font-size: 1.7rem;
+	padding: .8rem .5rem;
+	opacity: .5;
+	transition: color .2s;
+	margin-bottom: 10px;
+}
+
+.contact a:hover{
+	color: goldenrod;
+}
+
+.social-icons{
+	display: flex;
+	justify-content: center;
+}
+
+.social-icons a{
+	font-size: 1.8rem;
+	padding: .8rem .5rem;
+	opacity: .5;
+	transition: color .2s;
+}
+
+.social-icons a:hover{
+	color: goldenrod;
+}
+
+   /* BOTTOM*/
+.bottom{
+	font-family: Roboto;
+	font-size: 0.8rem;
+	background-color: black;
+	color: white;
+}
+.bottom a {
+	color: goldenrod;
+}
+
+
+ /* MEDIA QUERIES*/
+@media screen and (min-width: 900px){
+	section{
+		padding: 7.9rem;
+	}
+
+	.menu-toggle{
+		display: none;
+	}
+
+	.nav{
+		justify-content: space-between;
+	}
+
+	.nav-list{
+		position: initial;
+		width: initial;
+		height: initial;
+		background-color: transparent;
+		padding: 0;
+		justify-content: initial;
+		flex-direction: row;
+		transform: initial;
+		transition: initial;
+	}
+
+	.nav-link{
+		color: black;
+	}
+	.nav a:hover{
+		color: #c6243c;
+	}
+
+	.nav-item{
+		margin: 0 2.4rem;
+		border: none;
+	}
+
+	.nav-item: last-child{
+		margin-right: 0;
+	}
+
+	.sub-headline{
+		font-size: 9rem;
+	}
+
+	.first-letter{
+		font-size: 11.2rem;
+	}
+
+	.headline{
+		font-size: 3.7rem;
+		letter-spacing: .8px;
+	}
+
+	.restaurant-info{
+		display: flex;
+		align-items: center;
+	}
+	.restaurant-info > div{
+		flex: 1;
+	}
+
+	.padding-right{
+		padding-right: 3rem;
+	}
+
+
+	.footer-content{
+		max-width: 77.5rem;
+		margin: auto ;
+	}
+
+	.footer-content-about{
+		max-width: 51.3rem;
+		margin: 0 auto 2rem ;
+	}
+
+	.footer-content-divider{
+		display: flex;
+		justify-content: center;
+		padding-left: 105px;
+	}
+
+	.social-media,
+	.newsletter-form{
+		width: 100%;
+		max-width: 27.3rem;
+	}
+
+	.social-icons a{
+		opacity: 1;
+	}
+	.contact a{
+		margin-bottom: 25px;
+		opacity: 1;
+	}
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp{
+	0%{
+		transform: translateY(7rem);
+	}
+	100%{
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes scale{
+	0%{
+		transform: scale(2);
+	}
+	100%{
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@keyframes fadeDown{
+	0%{
+		transform: translateY(-7rem);
+	}
+	100%{
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+
+@keyframes spin{
+	0%{
+		transform: rotate(0);
+	}
+	100%{
+		opacity: 1;
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes up{
+	0%{
+		opacity: 0;
+	}
+	50%{
+		opacity: 1;
+	}
+	100%{
+		opacity: 0;
+		transform: translateY(-1rem);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
